@@ -1,0 +1,50 @@
+service: starwars-api-ts
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "dynamodb:*"
+      Resource: "*"
+      
+plugins:
+  - serverless-plugin-typescript
+  
+functions:
+  getPeople: # Endpoint para buscar personajes con la API de prueba SWAPI
+    handler: src/handlers/personHandler.getPeople
+    events:
+      - http:
+          path: people
+          method: get
+
+  createCharacter: # Endpoint para crear personajes en BD dynamodb
+    handler: src/handlers/characterHandler.createCharacter
+    events:
+      - http:
+          path: character
+          method: post
+          
+  getCharacters: # Endpoint para traer todos los personajes registrados en BD
+    handler: src/handlers/characterHandler.getCharacters
+    events:
+      - http:
+          path: characters
+          method: get
+          
+  searchCharacter: # Endpoint para buscar personaje por id o nombre
+    handler: src/handlers/characterHandler.searchCharacter
+    events:
+      - http:
+          path: search
+          method: get
+          
+  translateCharacters:
+    handler: src/handlers/translateHandler.translateCharacter
+    events:
+      - http:
+          path: translate
+          method: get
+          cors: true
