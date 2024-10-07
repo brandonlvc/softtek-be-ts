@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "6fb5858f-f0f2-4c88-9d18-2df3c1e26706",
+		"name": "Softtek Ts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38832621"
+	},
+	"item": [
+		{
+			"name": "getPeople",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://5leq1skzr9.execute-api.us-east-1.amazonaws.com/dev/people",
+					"protocol": "https",
+					"host": [
+						"5leq1skzr9",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"people"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "newCharacter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"1\",\r\n  \"nombre\": \"Luke Skywalker\",\r\n  \"altura\": \"172\",\r\n  \"masa\": \"77\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://5leq1skzr9.execute-api.us-east-1.amazonaws.com/dev/character",
+					"protocol": "https",
+					"host": [
+						"5leq1skzr9",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"character"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCharacters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://5leq1skzr9.execute-api.us-east-1.amazonaws.com/dev/characters",
+					"protocol": "https",
+					"host": [
+						"5leq1skzr9",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchCharacter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://5leq1skzr9.execute-api.us-east-1.amazonaws.com/dev/search?id=1&nombre=Skywalker",
+					"protocol": "https",
+					"host": [
+						"5leq1skzr9",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"search"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "nombre",
+							"value": "Skywalker"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "translateData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://5leq1skzr9.execute-api.us-east-1.amazonaws.com/dev/translate?id=1",
+					"protocol": "https",
+					"host": [
+						"5leq1skzr9",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"translate"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
